@@ -1,17 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-        Cell cellA = new Cell(1, 4, "Red");
-        Cell cellB = new Cell(4, 6, "Blue");
+        Cell cellA = new Cell(1, 2, "Красный");
+        Cell cellB = new Cell(4, 6, "Синий");
 
-        DistanceCalculator euclidean = new EuclideanDistance();
-        DistanceCalculator manhattan = new ManhattanDistance();
-        DistanceCalculator moore = new MooreDistance();
+        IDistanceCalculator centerEuclidean = new EuclideanIDistance();
+        IDistanceCalculator cornerEuclidean = new CornerEuclideanIDistance();
+        IDistanceCalculator manhattan = new ManhattanIDistance();
+        IDistanceCalculator moore = new MooreIDistance();
 
         System.out.println("Клетка A: " + cellA);
         System.out.println("Клетка B: " + cellB);
-        System.out.println("----------------------------------------");
-        System.out.printf("Евклидово (между центрами): %.2f%n", euclidean.calculate(cellA, cellB));
-        System.out.printf("Манхэттенское (по Нейману): %.2f%n", manhattan.calculate(cellA, cellB));
-        System.out.printf("По Муру (Чебышёва):         %.2f%n", moore.calculate(cellA, cellB));
+        System.out.println("-----------------------------------------------");
+        System.out.printf("Евклидово (между центрами):   %.2f%n", centerEuclidean.calculate(cellA, cellB));
+        System.out.printf("Евклидово (между углами):     %.2f%n", cornerEuclidean.calculate(cellA, cellB));
+        System.out.printf("Манхэттенское (по Нейману):   %.2f%n", manhattan.calculate(cellA, cellB));
+        System.out.printf("По Муру (Чебышёва):           %.2f%n", moore.calculate(cellA, cellB));
     }
 }

@@ -1,4 +1,4 @@
-public class EuclideanDistance implements DistanceCalculator {
+public class EuclideanIDistance implements IDistanceCalculator {
     @Override
     public double calculate(Cell a, Cell b) {
         int dx = a.getX() - b.getX();
