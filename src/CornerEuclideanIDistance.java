@@ -1,4 +1,4 @@
-public class CornerEuclideanIDistance implements IDistanceCalculator {
+public class CornerEuclideanIDistance implements IDistCalc {
     @Override
     public double calculate(Cell a, Cell b) {
         int dx = Math.max(0, Math.abs(a.getX() - b.getX()) - 1);

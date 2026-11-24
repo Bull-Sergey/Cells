@@ -3,10 +3,10 @@ public class Main {
         Cell cellA = new Cell(1, 2, "Красный");
         Cell cellB = new Cell(4, 6, "Синий");
 
-        IDistanceCalculator centerEuclidean = new EuclideanIDistance();
-        IDistanceCalculator cornerEuclidean = new CornerEuclideanIDistance();
-        IDistanceCalculator manhattan = new ManhattanIDistance();
-        IDistanceCalculator moore = new MooreIDistance();
+        IDistCalc centerEuclidean = new EuclideanIDistance();
+        IDistCalc cornerEuclidean = new CornerEuclideanIDistance();
+        IDistCalc manhattan = new ManhattanIDistance();
+        IDistCalc moore = new MooreIDistance();
 
         System.out.println("Клетка A: " + cellA);
         System.out.println("Клетка B: " + cellB);
